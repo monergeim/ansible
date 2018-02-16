@@ -1,0 +1,7 @@
+# refer to "ansible_distribution", "ansible_distribution_version"
+- hosts: aws
+  tasks:
+  - name: Refer to Gathering Facts
+    command: echo "{{ ansible_distribution }} {{ ansible_distribution_version }}"
+    register: dist
+  - debug: msg="{{ dist.stdout }}"

@@ -1,0 +1,5 @@
+- hosts: win aws
+  roles:
+    - test
+  become: yes
+  become_user: root

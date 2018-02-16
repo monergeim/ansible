@@ -1,0 +1,8 @@
+# target hostname or group name
+- hosts: aws
+# define tasks
+  tasks:
+# task name (any name you like)
+  - name: test_task
+# use file module to set the file state
+    file: path=/home/centos/test.conf state=touch owner=centos group=centos mode=0600

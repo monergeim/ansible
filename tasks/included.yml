@@ -1,0 +1,5 @@
+- name: General packages are installed
+  yum: name="{{ item }}" state=installed
+  with_items:
+    - "{{ general_packages }}"
+  tags: General_Packages

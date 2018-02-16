@@ -1,0 +1,7 @@
+[cli1]
+172.31.23.94
+ip-172-31-23-94.us-west-2.compute.internal
+
+[goo]
+8.8.8.8 ansible_user=user
+

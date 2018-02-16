@@ -1,0 +1,2 @@
+cloud_health_agent_url: https://s3.amazonaws.com/remote-collector/agent/v18/install_cht_perfmon.sh
+#linux_host: ansible_distribution == "CentOS" or ansible_distribution == "Debian" or ansible_system == "Linux"

@@ -1,0 +1,16 @@
+- hosts: aws
+  become: yes
+  become_method: sudo
+  handlers:
+  - name: reset_sshd
+    service: name=sshd state=restarted
+  tasks:
+  - name: edit sshd_config
+    lineinfile: >
+      dest=/etc/ssh/sshd_config
+      regexp="{{ item.regexp }}"
+      line="{{ item.line }}"
+    with_items:
+    - { regexp: '^#PermitRootLogin', line: 'PermitRootLogin no' }
+    notify: reset_sshd
+    tags: Edit_sshd_config

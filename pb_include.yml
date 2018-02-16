@@ -1,0 +1,10 @@
+- hosts: aws
+  become: yes
+  become_method: sudo
+  tasks:
+    - import_tasks: tasks/included.yml
+      vars:
+        general_packages: php
+
+# include another Playbook
+- import_playbook: httpd.yml

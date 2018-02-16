@@ -1,0 +1,17 @@
+#FOR LINUX:
+- name: Download Cloud Health Deinstallation file
+  get_url:
+    url: https://s3.amazonaws.com/remote-collector/agent/uninstall_cht_perfmon.sh
+    dest: /tmp/uninstall_cht_perfmon.sh
+    mode: 0700
+  when: ansible_distribution == "CentOS" or ansible_distribution == "Ubuntu"
+
+- name: Run Cloud Health Deinstallation script
+  shell: /tmp/uninstall_cht_perfmon.sh
+  when: ansible_distribution == "CentOS" or ansible_distribution == "Ubuntu"
+
+- name: Delete Cloud Health Deinstallation script
+  file:
+    path: /tmp/uninstall_cht_perfmon.sh
+    state: absent
+  when: ansible_distribution == "CentOS" or ansible_distribution == "Ubuntu"

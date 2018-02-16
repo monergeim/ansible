@@ -1,0 +1,6 @@
+- hosts: aws
+  become: yes
+  become_method: sudo
+  roles:
+    - ins_python_lib
+    - ins_httpd
